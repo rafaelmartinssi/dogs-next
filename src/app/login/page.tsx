@@ -1,9 +1,11 @@
+import LoginForm from "@/components/login/login-form";
 import React from "react";
 
-export default function LoginPage () {
+export default async function LoginPage () {
   return (
-    <main>
-        <div>Login</div>
-    </main>
+    <section className="animeLeft">
+      <h1 className="title">Login</h1>
+      <LoginForm />
+    </section>
   )
 }
