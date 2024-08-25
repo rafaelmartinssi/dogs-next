@@ -1,9 +1,15 @@
+import { Metadata } from "next";
 import React from "react";
 
-export default function PerdeuPage () {
+export const metadata: Metadata = {
+  title: 'Perdeu a senha | Dogs',
+  description: 'Recupere a sua senha'
+}
+
+export default async function PerdeuPage () {
   return (
-    <main>
-        <div>Perdeu</div>
-    </main>
+    <div className="animeLeft">
+        <h1 className="title">Perdeu a senha?</h1>
+    </div>
   )
 }
