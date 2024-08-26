@@ -12,7 +12,7 @@ export default async function passwordLost(state: {}, formData: FormData) {
 
     const { url } = PASSWORD_LOST();
 
-    const response = fetch(url, {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -22,6 +22,8 @@ export default async function passwordLost(state: {}, formData: FormData) {
         url: urlPerdeu
       })
     })
+
+    if (!response.ok) throw new Error('Email ou usuário não cadastrado.');
 
     return {
       data: null,
