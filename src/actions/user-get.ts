@@ -3,7 +3,6 @@
 import { cookies } from "next/headers";
 import { USER_GET } from "./api";
 import apiError from "@/functions/api-error";
-import { error } from "console";
 
 export type User = {
   id: number;
