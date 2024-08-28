@@ -1,15 +1,13 @@
-'use client';
+import { Metadata } from "next";
 
+const metadata: Metadata = {
+  title: 'Minha conta',
+}
 
-import { useUser } from "@/context/user-context";
-import React from "react";
-
-export default function ContaPage () {
-  const { user } = useUser();
-
+export default async function ContaPage () {
   return (
     <div>
-
+      Conta
     </div>
   )
 }

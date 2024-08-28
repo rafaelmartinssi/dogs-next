@@ -1,5 +1,7 @@
 'use server';
 
+import { PHOTOS_GET } from "./api";
+
 export type Photo = {
   id: number;
   author: string;
@@ -12,11 +14,16 @@ export type Photo = {
   total_comments: string;
 }
 
-const url = 'https://dogsapi.origamid.dev/json/api/photo/?_page=1&_total=6&_user=0';
+const params = '?_page=1&_total=6&_user=0';
 
 export default async function photosGet () {
-  const response = await fetch(url, {
+  const { url } = PHOTOS_GET();
+  const response = await fetch(`${url}${params}`, {
     method: 'GET',
+    next: {
+      revalidate: 10,
+      tags: ['photos']
+    }
   });
   const data = await response.json() as Photo[];
   return data;
