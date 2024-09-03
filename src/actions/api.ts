@@ -39,13 +39,9 @@ export function PHOTOS_GET({ page, total, user }: PhotosGetParams) {
   };
 }
 
-export function PHOTO_GET(id: number) {
+export function PHOTO_GET(id: string) {
   return {
     url: `${API_URL}/api/photo/${id}`,
-    options: {
-      method: 'GET',
-      cache: 'no-store',
-    },
   };
 }
 
@@ -55,15 +51,9 @@ export function COMMENT_POST(id: number) {
   };
 }
 
-export function PHOTO_DELETE(id: number) {
+export function PHOTO_DELETE(id: string) {
   return {
     url: `${API_URL}/api/photo/${id}`,
-    options: {
-      method: 'DELETE',
-      headers: {
-        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
-      },
-    },
   };
 }
 
