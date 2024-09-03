@@ -58,3 +58,15 @@
 .photo:hover .visualizacao {
   display: flex;
 }
+
+.loadingWrraper {
+  display: flex;
+  height: 100px;
+  margin: 1rem auto;
+}
+
+.loadingWrraper p {
+  text-align: center;
+  margin: auto;
+  color: #888;
+}
